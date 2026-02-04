@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import ChatWidget from './components/ChatWidget';
 import { TrendingUp, Target, Lightbulb } from 'lucide-react';
 
 export default function PortfolioApp() {
@@ -182,6 +183,9 @@ export default function PortfolioApp() {
           </div>
         </div>
       </section>
+
+      {/* Chat widget (floating) */}
+      <ChatWidget />
     </div>
   );
 }
