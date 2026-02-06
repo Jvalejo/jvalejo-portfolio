@@ -1,3 +1,4 @@
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { NextResponse } from 'next/server';
 
 const SYSTEM_INSTRUCTION = `You are the Strategic AI Alter-Ego of Jeison Valejo, VP of Product Design at Uphold. 
@@ -39,64 +40,28 @@ export async function POST(request) {
       );
     }
 
-    // Build the prompt with system instruction and history
-    let contents = [];
+    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
     
-    // Add system instruction as first user message
-    contents.push({
-      role: 'user',
-      parts: [{ text: SYSTEM_INSTRUCTION }]
-    });
-    contents.push({
-      role: 'model',
-      parts: [{ text: 'Understood. I am the Strategic AI Alter-Ego of Jeison Valejo, VP of Product Design at Uphold. How can I help you today?' }]
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-2.0-flash',
     });
 
-    // Add conversation history
+    // Build prompt with system instruction and history
+    let prompt = SYSTEM_INSTRUCTION + "\n\n";
+    
     if (history && history.length > 0) {
+      prompt += "Conversation history:\n";
       history.forEach(msg => {
-        contents.push({
-          role: msg.role === 'user' ? 'user' : 'model',
-          parts: [{ text: msg.content }]
-        });
+        prompt += `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}\n`;
       });
     }
+    
+    prompt += `\nUser: ${message}\nAssistant:`;
 
-    // Add current message
-    contents.push({
-      role: 'user',
-      parts: [{ text: message }]
-    });
+    const result = await model.generateContent(prompt);
+    const response = await result.response.text();
 
-    // Call Gemini API directly
-    const response = await fetch(
-      'https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=' + process.env.NEXT_PUBLIC_GEMINI_API_KEY,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          contents: contents,
-          generationConfig: {
-            temperature: 0.7,
-            topK: 40,
-            topP: 0.95,
-            maxOutputTokens: 1024,
-          }
-        })
-      }
-    );
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(JSON.stringify(errorData));
-    }
-
-    const data = await response.json();
-    const text = data.candidates[0].content.parts[0].text;
-
-    return NextResponse.json({ response: text });
+    return NextResponse.json({ response });
 
   } catch (error) {
     console.error('Chat API error:', error);
