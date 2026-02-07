@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ChatWidget from './components/ChatWidget';
+import HorizontalScrollPillars from './components/HorizontalScrollPillars';
 import { TrendingUp, Target, Lightbulb } from 'lucide-react';
 
 export default function PortfolioApp() {
@@ -114,77 +115,10 @@ export default function PortfolioApp() {
         </div>
       </section>
 
-      {/* Strategic Pillars */}
-      <section className="px-6 md:px-12 py-20 max-w-7xl mx-auto pb-32">
-        <h2 
-          className="text-5xl md:text-6xl lg:text-7xl font-serif mb-16 text-center tracking-tight transition-all duration-700 ease-out"
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-            transitionDelay: '500ms'
-          }}
-        >
-          Strategic Pillars
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div 
-            className="group bg-gradient-to-br from-zinc-900/40 to-zinc-950/60 border border-zinc-800/50 backdrop-blur-sm p-10 rounded-2xl transition-all duration-600 ease-out hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-900/10 hover:-translate-y-1"
-            style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '600ms'
-            }}
-          >
-            <div className="mb-8 transition-transform duration-600 ease-out group-hover:scale-110">
-              <TrendingUp className="w-14 h-14 text-emerald-400" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-3xl font-serif mb-3 tracking-tight">AI-Amplified Roadmap</h3>
-            <p className="text-zinc-500 mb-6 text-sm uppercase tracking-wider">Assistive to Agentic</p>
-            <p className="text-zinc-300 leading-relaxed text-lg">
-              Progressively embedding AI capabilities across the product ecosystem, moving from assistive tools that augment human decision-making to agentic systems that autonomously execute strategic initiatives.
-            </p>
-          </div>
+      {/* Horizontal Scroll Strategic Pillars */}
+      <HorizontalScrollPillars />
 
-          <div 
-            className="group bg-gradient-to-br from-zinc-900/40 to-zinc-950/60 border border-zinc-800/50 backdrop-blur-sm p-10 rounded-2xl transition-all duration-600 ease-out hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-900/10 hover:-translate-y-1"
-            style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '700ms'
-            }}
-          >
-            <div className="mb-8 transition-transform duration-600 ease-out group-hover:scale-110">
-              <Target className="w-14 h-14 text-blue-400" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-3xl font-serif mb-3 tracking-tight">The Quality Plan</h3>
-            <p className="text-zinc-500 mb-6 text-sm uppercase tracking-wider">150+ UX Debt Items as Risk</p>
-            <p className="text-zinc-300 leading-relaxed text-lg">
-              Systematic remediation of accumulated design and experience debt through prioritized sprints, transforming technical liabilities into opportunities for product excellence and user satisfaction.
-            </p>
-          </div>
-
-          <div 
-            className="group bg-gradient-to-br from-zinc-900/40 to-zinc-950/60 border border-zinc-800/50 backdrop-blur-sm p-10 rounded-2xl transition-all duration-600 ease-out hover:border-violet-500/50 hover:shadow-2xl hover:shadow-violet-900/10 hover:-translate-y-1"
-            style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-              transitionDelay: '800ms'
-            }}
-          >
-            <div className="mb-8 transition-transform duration-600 ease-out group-hover:scale-110">
-              <Lightbulb className="w-14 h-14 text-violet-400" strokeWidth={1.5} />
-            </div>
-            <h3 className="text-3xl font-serif mb-3 tracking-tight">Lean Org Design</h3>
-            <p className="text-zinc-500 mb-6 text-sm uppercase tracking-wider">$1.05M Budget Optimization</p>
-            <p className="text-zinc-300 leading-relaxed text-lg">
-              Strategic restructuring that eliminates redundancy and maximizes impact per dollar, creating a nimble organization capable of rapid iteration while maintaining exceptional output quality.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Chat widget (floating) */}
+      {/* Chat Widget */}
       <ChatWidget />
     </div>
   );
