@@ -31,76 +31,86 @@ const HorizontalScrollPillars = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Transform scroll progress to horizontal movement
   const translateX = -(scrollProgress * 75);
-  
-  // Parallax effect for background grid (moves slower)
   const gridTranslateX = -(scrollProgress * 25);
+  
+  // Background color shift based on scroll
+  const bgOpacity = scrollProgress * 0.3; // Shifts from zinc-950 to darker
 
   const pillars = [
     {
       icon: TrendingUp,
       title: 'AI-Amplified Roadmap',
-      subtitle: 'Assistive to Agentic',
+      subtitle: 'ASSISTIVE TO AGENTIC',
       description: 'Progressively embedding AI capabilities across the product ecosystem, moving from assistive tools that augment human decision-making to agentic systems that autonomously execute strategic initiatives.',
       specs: [
-        { key: 'EFFICIENCY', value: '+41%', detail: 'AI-Augmented Output' },
-        { key: 'AUTOMATION', value: '73%', detail: 'Process Coverage' },
-        { key: 'TIME_SAVED', value: '420h', detail: 'Monthly Average' },
-        { key: 'MODELS', value: '12', detail: 'Production Systems' }
+        { key: 'EFFICIENCY', value: '+41%', detail: 'AI-AUGMENTED OUTPUT' },
+        { key: 'AUTOMATION', value: '73%', detail: 'PROCESS COVERAGE' },
+        { key: 'TIME_SAVED', value: '420H', detail: 'MONTHLY AVERAGE' },
+        { key: 'MODELS', value: '12', detail: 'PRODUCTION SYSTEMS' }
       ],
-      color: 'emerald',
-      colorCode: '#10b981'
+      accentColor: '#FBBF24', // Yellow
+      borderClass: 'border-t-4 border-t-yellow-400'
     },
     {
       icon: Target,
       title: 'The Quality Plan',
-      subtitle: '150+ UX Debt Items as Strategic Risk',
+      subtitle: '150+ UX DEBT ITEMS',
       description: 'Systematic remediation of accumulated design and experience debt through prioritized sprints, transforming technical liabilities into opportunities for product excellence and user satisfaction.',
       specs: [
-        { key: 'WASTE_REDUCTION', value: '29%', detail: 'Operational Efficiency' },
-        { key: 'DEBT_ITEMS', value: '150+', detail: 'Tracked & Prioritized' },
-        { key: 'RESOLUTION', value: '85%', detail: 'Quarterly Rate' },
-        { key: 'SATISFACTION', value: '4.7', detail: 'User NPS Gain' }
+        { key: 'WASTE_REDUCTION', value: '29%', detail: 'OPERATIONAL EFFICIENCY' },
+        { key: 'DEBT_ITEMS', value: '150+', detail: 'TRACKED & PRIORITIZED' },
+        { key: 'RESOLUTION', value: '85%', detail: 'QUARTERLY RATE' },
+        { key: 'SATISFACTION', value: '4.7', detail: 'USER NPS GAIN' }
       ],
-      color: 'blue',
-      colorCode: '#3b82f6'
+      accentColor: '#EF4444', // Red
+      borderClass: 'border-t-4 border-t-red-500'
     },
     {
       icon: Lightbulb,
       title: 'Lean Org Design',
-      subtitle: '$1.05M Budget Optimization',
+      subtitle: '$1.05M BUDGET OPTIMIZATION',
       description: 'Strategic restructuring that eliminates redundancy and maximizes impact per dollar, creating a nimble organization capable of rapid iteration while maintaining exceptional output quality.',
       specs: [
-        { key: 'BUDGET_OPT', value: '$1.05M', detail: 'Annual Optimization' },
-        { key: 'EFFICIENCY', value: '2.3x', detail: 'Output per Person' },
-        { key: 'COST_REDUCTION', value: '-42%', detail: 'Feature Cost YoY' },
-        { key: 'VELOCITY', value: '+156%', detail: 'Sprint Completion' }
+        { key: 'BUDGET_OPT', value: '$1.05M', detail: 'ANNUAL OPTIMIZATION' },
+        { key: 'EFFICIENCY', value: '2.3X', detail: 'OUTPUT PER PERSON' },
+        { key: 'COST_REDUCTION', value: '-42%', detail: 'FEATURE COST YOY' },
+        { key: 'VELOCITY', value: '+156%', detail: 'SPRINT COMPLETION' }
       ],
-      color: 'violet',
-      colorCode: '#8b5cf6'
+      accentColor: '#3B82F6', // Blue
+      borderClass: 'border-t-4 border-t-blue-500'
     },
     {
       icon: Zap,
       title: 'Research Maturity',
-      subtitle: 'Evidence-Based Design Framework',
+      subtitle: 'EVIDENCE-BASED DESIGN',
       description: 'Building a systematic research practice that transforms subjective opinions into data-driven decisions, establishing design as a strategic function grounded in user insights and business metrics.',
       specs: [
-        { key: 'MATURITY', value: '750%', detail: 'Growth Since 2023' },
-        { key: 'STUDIES', value: '24', detail: 'Quarterly Average' },
-        { key: 'IMPACT', value: '67%', detail: 'Feature Influence' },
-        { key: 'CONFIDENCE', value: '94%', detail: 'Decision Accuracy' }
+        { key: 'MATURITY', value: '750%', detail: 'GROWTH SINCE 2023' },
+        { key: 'STUDIES', value: '24', detail: 'QUARTERLY AVERAGE' },
+        { key: 'IMPACT', value: '67%', detail: 'FEATURE INFLUENCE' },
+        { key: 'CONFIDENCE', value: '94%', detail: 'DECISION ACCURACY' }
       ],
-      color: 'amber',
-      colorCode: '#f59e0b'
+      accentColor: '#10B981', // Emerald (4th card)
+      borderClass: 'border-t-4 border-t-emerald-500'
     }
   ];
 
   return (
-    <section ref={containerRef} className="relative h-[400vh] bg-zinc-950">
-      {/* Parallax Background Grid */}
+    <section ref={containerRef} className="relative h-[400vh]">
+      {/* Dynamic Background with color shift */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-10"
+        className="fixed inset-0 bg-black transition-opacity duration-300"
+        style={{ opacity: 1 - bgOpacity }}
+      />
+      <div 
+        className="fixed inset-0 bg-zinc-950 transition-opacity duration-300"
+        style={{ opacity: bgOpacity }}
+      />
+
+      {/* Parallax Grid Lines */}
+      <div 
+        className="fixed inset-0 pointer-events-none opacity-20"
         style={{
           transform: `translateX(${gridTranslateX}px)`,
           transition: 'transform 0.1s ease-out'
@@ -108,28 +118,28 @@ const HorizontalScrollPillars = () => {
       >
         <div className="absolute inset-0 w-[200%]" style={{
           backgroundImage: `
-            linear-gradient(to right, rgb(63 63 70 / 0.4) 1px, transparent 1px),
-            linear-gradient(to bottom, rgb(63 63 70 / 0.4) 1px, transparent 1px)
+            linear-gradient(to right, rgb(113 113 122) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(113 113 122) 1px, transparent 1px)
           `,
-          backgroundSize: '120px 120px'
+          backgroundSize: '100px 100px'
         }} />
       </div>
 
       {/* Sticky Container */}
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        {/* Section Title Indicator */}
-        <div className="absolute top-12 left-12 z-20">
-          <div className="text-zinc-600 font-mono text-xs uppercase tracking-widest mb-2">
-            Strategic Pillars
+        {/* Section Indicator */}
+        <div className="absolute top-8 left-8 z-20 border-2 border-zinc-800 bg-black p-4">
+          <div className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest mb-1">
+            STRATEGIC PILLARS
           </div>
-          <div className="text-zinc-700 font-mono text-xs">
-            {Math.round(scrollProgress * 100)}% COMPLETE
+          <div className="text-white font-mono text-xl font-bold">
+            {Math.round(scrollProgress * 100)}%
           </div>
         </div>
 
         {/* Horizontal Track */}
         <div 
-          className="flex gap-12 px-12 will-change-transform"
+          className="flex gap-0 will-change-transform"
           style={{ 
             transform: `translateX(${translateX}%)`,
             transition: 'transform 0.1s ease-out'
@@ -138,122 +148,111 @@ const HorizontalScrollPillars = () => {
           {pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 min-w-[80vw] h-[85vh] bg-zinc-900/40 border border-zinc-800/60 backdrop-blur-sm relative overflow-hidden group"
-              style={{
-                boxShadow: `0 0 0 1px ${pillar.colorCode}15`
-              }}
+              className={`flex-shrink-0 min-w-[80vw] h-screen border-2 border-zinc-800 bg-black relative overflow-hidden ${pillar.borderClass}`}
             >
-              {/* Blueprint Grid Overlay */}
+              {/* Bauhaus Grid Overlay */}
               <div 
-                className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-500" 
+                className="absolute inset-0 opacity-5" 
                 style={{
                   backgroundImage: `
-                    linear-gradient(to right, ${pillar.colorCode}40 1px, transparent 1px),
-                    linear-gradient(to bottom, ${pillar.colorCode}40 1px, transparent 1px)
+                    linear-gradient(to right, ${pillar.accentColor} 1px, transparent 1px),
+                    linear-gradient(to bottom, ${pillar.accentColor} 1px, transparent 1px)
                   `,
-                  backgroundSize: '60px 60px'
+                  backgroundSize: '40px 40px'
                 }} 
               />
 
-              {/* Corner Accent Lines */}
-              <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 opacity-30" style={{ borderColor: pillar.colorCode }} />
-              <div className="absolute top-0 right-0 w-20 h-20 border-t-2 border-r-2 opacity-30" style={{ borderColor: pillar.colorCode }} />
-              <div className="absolute bottom-0 left-0 w-20 h-20 border-b-2 border-l-2 opacity-30" style={{ borderColor: pillar.colorCode }} />
-              <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 opacity-30" style={{ borderColor: pillar.colorCode }} />
+              {/* Bauhaus Corner Markers */}
+              <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-zinc-800" />
+              <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-zinc-800" />
+              <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-zinc-800" />
+              <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-zinc-800" />
 
               {/* Content */}
-              <div className="relative z-10 p-20 h-full flex flex-col">
-                {/* Header Area */}
-                <div className="mb-12">
+              <div className="relative z-10 p-16 xl:p-24 h-full flex flex-col">
+                {/* Header */}
+                <div className="mb-16">
                   {/* Card Number */}
-                  <div className="text-zinc-800 font-mono text-sm mb-6 tracking-wider">
-                    PILLAR_{String(idx + 1).padStart(2, '0')}
+                  <div className="inline-block border-2 border-zinc-800 px-4 py-2 mb-8">
+                    <span className="text-zinc-600 font-mono text-xs tracking-widest">
+                      PILLAR_{String(idx + 1).padStart(2, '0')}
+                    </span>
                   </div>
 
                   {/* Icon */}
-                  <div className="mb-8" style={{ color: pillar.colorCode }}>
-                    <pillar.icon className="w-20 h-20" strokeWidth={0.75} />
+                  <div className="mb-10" style={{ color: pillar.accentColor }}>
+                    <pillar.icon className="w-24 h-24" strokeWidth={1} />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-8xl xl:text-9xl font-serif font-extralight tracking-tighter mb-6 leading-[0.9]">
+                  <h3 className="text-8xl xl:text-9xl font-serif font-black tracking-tighter mb-6 leading-[0.85] uppercase">
                     {pillar.title}
                   </h3>
 
                   {/* Subtitle */}
-                  <div className="flex items-center gap-3 text-zinc-500 text-xs font-mono uppercase tracking-widest">
-                    <div className="h-px w-12 bg-zinc-700" />
-                    {pillar.subtitle}
+                  <div className="border-2 border-zinc-800 inline-block px-6 py-3 bg-zinc-950">
+                    <span className="text-zinc-400 text-xs font-mono uppercase tracking-widest">
+                      {pillar.subtitle}
+                    </span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-zinc-300 text-xl leading-relaxed mb-16 max-w-3xl font-light">
+                <p className="text-zinc-300 text-lg leading-relaxed mb-16 max-w-3xl font-sans">
                   {pillar.description}
                 </p>
 
-                {/* Technical Specifications Grid */}
-                <div className="mt-auto">
-                  <div className="text-zinc-600 font-mono text-xs uppercase tracking-wider mb-4">
-                    Technical Specifications
-                  </div>
-                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    {pillar.specs.map((spec, sIdx) => (
-                      <div 
-                        key={sIdx}
-                        className="bg-zinc-950/60 border border-zinc-800/40 p-5 backdrop-blur-sm group-hover:border-zinc-700/60 transition-colors"
-                      >
-                        <div className="text-zinc-600 font-mono text-[10px] uppercase tracking-widest mb-2">
-                          {spec.key}
-                        </div>
-                        <div className="text-4xl font-bold font-mono mb-1" style={{ color: pillar.colorCode }}>
-                          {spec.value}
-                        </div>
-                        <div className="text-zinc-500 font-mono text-xs">
-                          {spec.detail}
-                        </div>
+                {/* Technical Specs Grid - Bauhaus Style */}
+                <div className="mt-auto grid grid-cols-2 lg:grid-cols-4 gap-0 border-2 border-zinc-800">
+                  {pillar.specs.map((spec, sIdx) => (
+                    <div 
+                      key={sIdx}
+                      className="border-r-2 border-b-2 border-zinc-800 last:border-r-0 p-6 bg-zinc-950 hover:bg-black transition-colors"
+                    >
+                      <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-3">
+                        {spec.key}
                       </div>
-                    ))}
-                  </div>
+                      <div className="text-5xl font-black font-mono mb-2" style={{ color: pillar.accentColor }}>
+                        {spec.value}
+                      </div>
+                      <div className="text-zinc-500 font-mono text-[10px] uppercase tracking-wider">
+                        {spec.detail}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Large Card Number Watermark */}
+              {/* Large Number Watermark */}
               <div 
-                className="absolute top-1/2 right-12 -translate-y-1/2 text-[20rem] font-serif font-thin leading-none opacity-5 pointer-events-none"
+                className="absolute top-1/2 right-8 -translate-y-1/2 text-[18rem] font-black leading-none opacity-5 pointer-events-none font-mono"
               >
-                {String(idx + 1).padStart(2, '0')}
+                {idx + 1}
               </div>
             </div>
           ))}
 
-          {/* End Card - Completion */}
-          <div className="flex-shrink-0 min-w-[40vw] h-[85vh] flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-zinc-700 text-7xl font-serif font-thin mb-6">
-                Strategic<br/>Framework
+          {/* End Marker */}
+          <div className="flex-shrink-0 min-w-[40vw] h-screen border-2 border-zinc-800 bg-black flex items-center justify-center">
+            <div className="text-center border-2 border-zinc-800 p-12">
+              <div className="text-zinc-600 text-7xl font-black mb-4 font-mono">
+                END
               </div>
-              <div className="text-zinc-600 font-mono text-sm uppercase tracking-widest">
-                End of Pillars
+              <div className="text-zinc-700 font-mono text-xs uppercase tracking-widest">
+                STRATEGIC FRAMEWORK
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Scroll Progress Indicator */}
-      <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
-        <div className="bg-zinc-900/80 border border-zinc-800 backdrop-blur-sm px-6 py-3 rounded-full">
-          <div className="flex items-center gap-3">
-            <div className="text-zinc-500 font-mono text-xs">SCROLL</div>
-            <div className="w-32 h-1 bg-zinc-800 rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-gradient-to-r from-emerald-500 via-blue-500 to-violet-500 transition-all duration-100"
-                style={{ width: `${scrollProgress * 100}%` }}
-              />
-            </div>
-            <div className="text-zinc-500 font-mono text-xs">{Math.round(scrollProgress * 100)}%</div>
-          </div>
+      {/* Bauhaus Progress Bar */}
+      <div className="fixed bottom-0 left-0 right-0 z-20 pointer-events-none">
+        <div className="border-t-2 border-zinc-800 bg-black">
+          <div 
+            className="h-2 bg-gradient-to-r from-yellow-400 via-red-500 to-blue-500 transition-all duration-100"
+            style={{ width: `${scrollProgress * 100}%` }}
+          />
         </div>
       </div>
     </section>
