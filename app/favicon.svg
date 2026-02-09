@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .jv-text { fill: #FAFAFA; }
+        .jv-bg { fill: #09090B; }
+        .jv-accent { fill: #EAB308; }
+      }
+      @media (prefers-color-scheme: light) {
+        .jv-text { fill: #09090B; }
+        .jv-bg { fill: #FAFAFA; }
+        .jv-accent { fill: #CA8A04; }
+      }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="jv-bg" width="100" height="100"/>
+  
+  <!-- Bauhaus accent line -->
+  <rect class="jv-accent" x="0" y="0" width="100" height="3"/>
+  
+  <!-- J -->
+  <path class="jv-text" d="M 25 30 L 25 55 Q 25 70 35 70 Q 40 70 40 65 L 40 30" 
+        stroke-width="6" stroke-linecap="square" fill="none" stroke="currentColor"/>
+  
+  <!-- V -->
+  <path class="jv-text" d="M 55 30 L 67.5 70 L 80 30" 
+        stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" fill="none" stroke="currentColor"/>
+</svg>
