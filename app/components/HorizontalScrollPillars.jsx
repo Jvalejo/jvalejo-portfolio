@@ -82,13 +82,13 @@ const HorizontalScrollPillars = () => {
       icon: BookOpen,
       title: 'Operational Leadership',
       subtitle: 'SCALING QUALITY THROUGH SYSTEMATIC PRACTICE',
-      description: 'Leading a 16-person design team with a $1.05M budget requires more than vision—it demands operational rigor. The 750% increase in research maturity is not luck; it is the result of systematic frameworks, structured feedback loops, and relentless iteration. Design excellence scales when leadership transforms intuition into repeatable methodology.',
+      description: 'Leading design teams with multi-million dollar R&D budgets requires operational rigor. The 750% increase in research maturity results from systematic frameworks, structured feedback loops, and relentless iteration. Design excellence scales when leadership transforms intuition into repeatable methodology.',
       kpi: '750%',
       kpiLabel: 'MATURITY GROWTH',
       metrics: [
-        { label: 'Team Size', value: '16' },
-        { label: 'Budget', value: '$1.05M' },
-        { label: 'Studies/Q', value: '24' }
+        { label: 'Team Scale', value: 'Executive' },
+        { label: 'Budget', value: 'Multi-M' },
+        { label: 'Studies/Q', value: '24+' }
       ],
       borderClass: 'border-t-2 border-t-blue-500',
       accentColor: 'blue-500'

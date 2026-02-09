@@ -65,7 +65,7 @@ const AboutSection = () => {
 
           <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I lead a 16-person team with a $1.05M budget. My work sits at the intersection where AI serves as the multiplier and human empathy remains the compass. The 2026 Strategy is not about replacing human judgment—it is about amplifying it systematically.
+              As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I lead design teams managing multi-million dollar R&D budgets. My work sits at the intersection where AI serves as the multiplier and human empathy remains the compass. The 2026 Strategy is not about replacing human judgment—it is about amplifying it systematically.
             </p>
 
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
