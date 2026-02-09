@@ -55,7 +55,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <blockquote className="text-3xl md:text-4xl xl:text-6xl font-serif font-light leading-tight mb-4 tracking-tight">
+          <blockquote className="text-3xl md:text-4xl xl:text-6xl font-serif font-light leading-tight mb-3 tracking-tight">
             "Designing for the next generation of trust."
           </blockquote>
           

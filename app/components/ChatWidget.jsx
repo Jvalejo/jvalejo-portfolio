@@ -26,8 +26,9 @@ export default function ChatWidget() {
   }, [isOpen]);
 
   const quickActions = [
-    'Tell me about the 2026 roadmap',
-    'What is your leadership philosophy?'
+    'What is your leadership philosophy?',
+    'Explain Empathic Design.',
+    'How do you scale quality with AI?'
   ];
 
   const sendMessage = async (messageText) => {
@@ -57,7 +58,7 @@ export default function ChatWidget() {
       console.error('Chat error:', error);
       const errorMessage = {
         role: 'assistant',
-        content: 'I encountered an error. Please verify the API configuration or try again.'
+        content: 'I encountered an error. Please try again or verify the API configuration.'
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -80,7 +81,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-8 right-8 w-14 h-14 border border-zinc-700 bg-black hover:bg-zinc-950 hover:border-yellow-500 text-zinc-100 transition-all duration-300 flex items-center justify-center z-50 group backdrop-blur-md"
-        aria-label="Open Strategy Twin"
+        aria-label="Open The Alter-Ego"
       >
         {isOpen ? (
           <X className="w-5 h-5" strokeWidth={1.5} />
@@ -89,11 +90,11 @@ export default function ChatWidget() {
         )}
       </button>
 
-      {/* Chat Window - Industrial Noir with Warmth */}
+      {/* Chat Window - Industrial Noir */}
       {isOpen && (
-        <div className="fixed bottom-28 right-8 w-96 max-w-[calc(100vw-4rem)] h-[500px] border border-zinc-800 bg-zinc-950/90 backdrop-blur-md flex flex-col z-50 overflow-hidden">
+        <div className="fixed bottom-28 right-8 w-96 max-w-[calc(100vw-4rem)] h-[550px] border border-zinc-800 bg-zinc-950/90 backdrop-blur-md flex flex-col z-50 overflow-hidden">
           {/* Header */}
-          <div className="border-b border-zinc-800 bg-black/50 p-4 flex items-center justify-between">
+          <div className="border-b border-zinc-800 bg-black/50 p-4 flex items-center justify-between flex-shrink-0">
             <div>
               <div className="text-zinc-100 font-serif text-base tracking-tight mb-1">
                 The Alter-Ego
@@ -110,25 +111,25 @@ export default function ChatWidget() {
             </button>
           </div>
 
-          {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {/* Messages Area - Fixed Height with Scroll */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 max-h-[400px]">
             {messages.length === 0 && (
               <div className="py-6">
                 <div className="w-12 h-12 border border-zinc-800 bg-black flex items-center justify-center mx-auto mb-4">
                   <Plus className="w-6 h-6 text-yellow-500" strokeWidth={1.5} />
                 </div>
                 
-                {/* Warm Initial Message */}
+                {/* Initial Message */}
                 <div className="text-center mb-8">
                   <p className="text-zinc-300 text-sm leading-relaxed mb-2">
                     I'm Jeison's AI counterpart.
                   </p>
                   <p className="text-zinc-500 text-xs leading-relaxed">
-                    Ask me about our 2026 roadmap or my leadership philosophy.
+                    Ask me about leadership, strategy, or design philosophy.
                   </p>
                 </div>
                 
-                {/* Quick Actions */}
+                {/* Safe Quick Actions */}
                 <div className="space-y-2">
                   {quickActions.map((action, idx) => (
                     <button
@@ -150,7 +151,7 @@ export default function ChatWidget() {
                 className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] px-4 py-3 ${
+                  className={`max-w-[85%] px-4 py-3 ${
                     msg.role === 'user'
                       ? 'border border-yellow-500/50 bg-yellow-500/5 text-zinc-100'
                       : 'border border-zinc-800 bg-black text-zinc-300'
@@ -177,7 +178,7 @@ export default function ChatWidget() {
           </div>
 
           {/* Input Area */}
-          <form onSubmit={handleSubmit} className="border-t border-zinc-800 p-4 bg-black/50">
+          <form onSubmit={handleSubmit} className="border-t border-zinc-800 p-4 bg-black/50 flex-shrink-0">
             <div className="flex gap-2">
               <input
                 ref={inputRef}
