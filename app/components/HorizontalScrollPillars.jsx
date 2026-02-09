@@ -67,7 +67,7 @@ const HorizontalScrollPillars = () => {
       icon: Heart,
       title: 'Empathic Design',
       subtitle: 'HUMAN AGENCY IN HARD ENVIRONMENTS',
-      description: 'In industries built on complexity and risk, empathy becomes the compass. Understanding user anxiety, regulatory pressure, and trust erosion isn't soft—it's strategic. Every interface decision either empowers human agency or diminishes it. We choose empowerment.',
+      description: 'In industries built on complexity and risk, empathy becomes the compass. Understanding user anxiety, regulatory pressure, and trust erosion is not soft—it is strategic. Every interface decision either empowers human agency or diminishes it. We choose empowerment.',
       kpi: '29%',
       kpiLabel: 'WASTE REDUCTION',
       metrics: [
@@ -82,7 +82,7 @@ const HorizontalScrollPillars = () => {
       icon: BookOpen,
       title: 'Evolutionary Learning',
       subtitle: 'RESEARCH MATURITY & SYSTEMATIC GROWTH',
-      description: 'Design maturity isn't achieved through heroic efforts—it's built through systematic practice. Evidence-based frameworks, structured feedback loops, and continuous iteration transform intuition into methodology. Knowledge compounds when properly captured and shared.',
+      description: 'Design maturity is not achieved through heroic efforts—it is built through systematic practice. Evidence-based frameworks, structured feedback loops, and continuous iteration transform intuition into methodology. Knowledge compounds when properly captured and shared.',
       kpi: '750%',
       kpiLabel: 'MATURITY GROWTH',
       metrics: [
