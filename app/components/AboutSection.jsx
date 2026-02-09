@@ -55,21 +55,25 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <blockquote className="text-3xl md:text-4xl xl:text-6xl font-serif font-light leading-tight mb-8 md:mb-12 tracking-tight">
-            "Designing for human agency in an AI-amplified world."
+          <blockquote className="text-3xl md:text-4xl xl:text-6xl font-serif font-light leading-tight mb-4 tracking-tight">
+            "Designing for the next generation of trust."
           </blockquote>
+          
+          <div className="text-2xl md:text-3xl xl:text-4xl font-serif font-light text-zinc-600 mb-8 md:mb-12 tracking-tight">
+            For Nuno.
+          </div>
 
           <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I lead at the intersection where AI serves as the multiplier and human empathy remains the compass. The 2026 Strategy isn't about replacing human judgment—it's about amplifying it while preserving what makes us irreplaceable: creativity, strategic thinking, and deep user empathy.
+              As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I lead a 16-person team with a $1.05M budget. My work sits at the intersection where AI serves as the multiplier and human empathy remains the compass. The 2026 Strategy is not about replacing human judgment—it is about amplifying it systematically.
             </p>
 
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              <span className="text-yellow-500 font-mono">AI is the multiplier.</span> <span className="text-red-600 font-mono">Human empathy is the compass.</span> Together, they drive <span className="text-white font-medium">designing for human agency</span>—empowering users to make informed decisions in complex, high-stakes environments. This isn't soft design thinking; it's strategic advantage measured in <span className="text-emerald-400 font-mono">+41% efficiency</span>, <span className="text-blue-400 font-mono">29% waste reduction</span>, and <span className="text-violet-400 font-mono">750% research maturity</span>.
+              <span className="text-yellow-500 font-mono">AI handles the scale.</span> I handle the strategy, the ethics, and the leadership. Together, we design for <span className="text-white font-medium">human agency</span>—empowering users to make informed decisions in complex, high-stakes environments. The results speak: <span className="text-emerald-400 font-mono">+41% efficiency</span>, <span className="text-blue-400 font-mono">29% waste reduction</span>, and <span className="text-violet-400 font-mono">750% research maturity growth</span>.
             </p>
 
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-              Beyond spreadsheets and systems, I'm <span className="text-white font-medium">Nuno's father</span>—a role that anchors every strategic decision in long-term thinking and ethical responsibility. The trust architectures we build today shape the world he inherits tomorrow.
+              Beyond the metrics and frameworks, I am <span className="text-white font-medium">Nuno's father</span>. That role anchors every decision in long-term thinking and ethical responsibility. The trust architectures we build today define the world he inherits tomorrow.
             </p>
           </div>
 
@@ -78,7 +82,7 @@ const AboutSection = () => {
               <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
                 Role
               </div>
-              <div className="text-white font-mono text-xs md:text-sm">
+              <div className="text-white text-xs md:text-sm">
                 VP Product Design
               </div>
             </div>
@@ -86,7 +90,7 @@ const AboutSection = () => {
               <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
                 Company
               </div>
-              <div className="text-white font-mono text-xs md:text-sm">
+              <div className="text-white text-xs md:text-sm">
                 Uphold
               </div>
             </div>

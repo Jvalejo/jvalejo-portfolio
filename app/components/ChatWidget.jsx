@@ -26,8 +26,8 @@ export default function ChatWidget() {
   }, [isOpen]);
 
   const quickActions = [
-    'Explain AI-Amplified strategy',
-    'What is Empathic Design?'
+    'Tell me about the 2026 roadmap',
+    'What is your leadership philosophy?'
   ];
 
   const sendMessage = async (messageText) => {
@@ -57,7 +57,7 @@ export default function ChatWidget() {
       console.error('Chat error:', error);
       const errorMessage = {
         role: 'assistant',
-        content: 'System error. Please verify API configuration.'
+        content: 'I encountered an error. Please verify the API configuration or try again.'
       };
       setMessages(prev => [...prev, errorMessage]);
     } finally {
@@ -80,7 +80,7 @@ export default function ChatWidget() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-8 right-8 w-14 h-14 border border-zinc-700 bg-black hover:bg-zinc-950 hover:border-yellow-500 text-zinc-100 transition-all duration-300 flex items-center justify-center z-50 group backdrop-blur-md"
-        aria-label="Open AI System"
+        aria-label="Open Strategy Twin"
       >
         {isOpen ? (
           <X className="w-5 h-5" strokeWidth={1.5} />
@@ -89,17 +89,17 @@ export default function ChatWidget() {
         )}
       </button>
 
-      {/* Chat Window - Industrial Noir */}
+      {/* Chat Window - Industrial Noir with Warmth */}
       {isOpen && (
-        <div className="fixed bottom-28 right-8 w-96 max-w-[calc(100vw-4rem)] h-[500px] border border-zinc-800 bg-zinc-950/80 backdrop-blur-md flex flex-col z-50 overflow-hidden">
+        <div className="fixed bottom-28 right-8 w-96 max-w-[calc(100vw-4rem)] h-[500px] border border-zinc-800 bg-zinc-950/90 backdrop-blur-md flex flex-col z-50 overflow-hidden">
           {/* Header */}
           <div className="border-b border-zinc-800 bg-black/50 p-4 flex items-center justify-between">
             <div>
-              <div className="text-zinc-100 font-mono text-xs tracking-widest mb-1">
-                JV.AI_SYSTEM_v1.0
+              <div className="text-zinc-100 font-serif text-base tracking-tight mb-1">
+                The Alter-Ego
               </div>
-              <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-wider">
-                Strategic AI / Empathic Core
+              <div className="text-zinc-500 font-mono text-[9px] uppercase tracking-wider">
+                Jeison's Strategy Twin
               </div>
             </div>
             <button
@@ -113,12 +113,19 @@ export default function ChatWidget() {
           {/* Messages Area */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.length === 0 && (
-              <div className="text-center py-8">
+              <div className="py-6">
                 <div className="w-12 h-12 border border-zinc-800 bg-black flex items-center justify-center mx-auto mb-4">
                   <Plus className="w-6 h-6 text-yellow-500" strokeWidth={1.5} />
                 </div>
-                <div className="text-zinc-500 font-mono text-xs uppercase tracking-wider mb-6">
-                  Initialize Query
+                
+                {/* Warm Initial Message */}
+                <div className="text-center mb-8">
+                  <p className="text-zinc-300 text-sm leading-relaxed mb-2">
+                    I'm Jeison's AI counterpart.
+                  </p>
+                  <p className="text-zinc-500 text-xs leading-relaxed">
+                    Ask me about our 2026 roadmap or my leadership philosophy.
+                  </p>
                 </div>
                 
                 {/* Quick Actions */}
@@ -127,8 +134,9 @@ export default function ChatWidget() {
                     <button
                       key={idx}
                       onClick={() => handleQuickAction(action)}
-                      className="w-full text-left px-4 py-3 border border-zinc-800 bg-black hover:bg-zinc-950 hover:border-yellow-500 text-zinc-400 hover:text-zinc-100 text-xs font-mono transition-all duration-200"
+                      className="w-full text-left px-4 py-3 border border-zinc-800 bg-black hover:bg-zinc-950 hover:border-yellow-500/50 text-zinc-400 hover:text-zinc-100 text-xs transition-all duration-200"
                     >
+                      <span className="text-yellow-500 mr-2">→</span>
                       {action}
                     </button>
                   ))}
@@ -144,11 +152,11 @@ export default function ChatWidget() {
                 <div
                   className={`max-w-[80%] px-4 py-3 ${
                     msg.role === 'user'
-                      ? 'border border-yellow-500 bg-yellow-500/10 text-zinc-100'
+                      ? 'border border-yellow-500/50 bg-yellow-500/5 text-zinc-100'
                       : 'border border-zinc-800 bg-black text-zinc-300'
                   }`}
                 >
-                  <p className="text-xs font-mono leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+                  <p className="text-xs leading-relaxed whitespace-pre-wrap">{msg.content}</p>
                 </div>
               </div>
             ))}
@@ -176,14 +184,14 @@ export default function ChatWidget() {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Enter query..."
-                className="flex-1 border border-zinc-800 bg-black px-4 py-2 text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-yellow-500 text-xs font-mono"
+                placeholder="Ask anything..."
+                className="flex-1 border border-zinc-800 bg-black px-4 py-2 text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-yellow-500/50 text-xs"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="border border-zinc-800 bg-black hover:bg-zinc-950 hover:border-yellow-500 disabled:border-zinc-900 disabled:bg-zinc-950 text-zinc-100 disabled:text-zinc-700 px-4 py-2 transition-all duration-200 disabled:cursor-not-allowed"
+                className="border border-zinc-800 bg-black hover:bg-zinc-950 hover:border-yellow-500/50 disabled:border-zinc-900 disabled:bg-zinc-950 text-zinc-100 disabled:text-zinc-700 px-4 py-2 transition-all duration-200 disabled:cursor-not-allowed"
               >
                 <Send className="w-4 h-4" strokeWidth={1.5} />
               </button>

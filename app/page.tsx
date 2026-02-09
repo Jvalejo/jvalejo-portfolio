@@ -117,7 +117,7 @@ export default function PortfolioApp() {
             <div className="p-8 md:p-10 border-r-0 md:border-r-2 border-b-2 md:border-b-0 border-zinc-800 bg-black">
               <div className="border-l-4 border-l-yellow-400 pl-6">
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-sans">
-                  <span className="text-yellow-500 font-mono">AI is the multiplier.</span> It accelerates research, automates repetition, and scales creative output. But artificial intelligence remains exactly that—artificial. It amplifies human capability without replacing human judgment. The machine processes; the strategist decides.
+                  <span className="text-yellow-500 font-mono">AI handles the scale.</span> It accelerates research, automates repetition, and multiplies creative output. But artificial intelligence remains exactly that—artificial. The machine processes; the strategist decides. Human judgment is irreplaceable.
                 </p>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function PortfolioApp() {
             <div className="p-8 md:p-10 border-r-0 md:border-r-2 border-b-2 md:border-b-0 border-zinc-800 bg-black">
               <div className="border-l-4 border-l-red-500 pl-6">
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-sans">
-                  <span className="text-red-600 font-mono">Human empathy is the compass.</span> In complex, high-stakes environments, understanding user anxiety and building trust isn't optional—it's strategic. Every interface either empowers human agency or diminishes it. We design for agency, always.
+                  <span className="text-red-600 font-mono">I handle the strategy, the ethics, and the leadership.</span> Understanding user anxiety, regulatory pressure, and trust dynamics is not soft—it is strategic. Empathy becomes the compass that guides every decision toward human agency and empowerment.
                 </p>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function PortfolioApp() {
             <div className="p-8 md:p-10 bg-black">
               <div className="border-l-4 border-l-blue-500 pl-6">
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-sans">
-                  Excellence emerges from the synthesis: AI-amplified efficiency paired with empathic, human-centered strategy. This balance transforms design from cost center to competitive advantage, measured in reduced waste, accelerated maturity, and sustainable trust.
+                  The synthesis of AI-amplified efficiency and human-led strategy creates sustainable competitive advantage. This balance transforms design from cost center to business driver, measured in reduced waste, accelerated maturity, and enduring trust.
                 </p>
               </div>
             </div>

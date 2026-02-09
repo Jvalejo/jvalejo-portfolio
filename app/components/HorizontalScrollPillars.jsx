@@ -66,8 +66,8 @@ const HorizontalScrollPillars = () => {
     {
       icon: Heart,
       title: 'Empathic Design',
-      subtitle: 'HUMAN AGENCY IN HARD ENVIRONMENTS',
-      description: 'In industries built on complexity and risk, empathy becomes the compass. Understanding user anxiety, regulatory pressure, and trust erosion is not soft—it is strategic. Every interface decision either empowers human agency or diminishes it. We choose empowerment.',
+      subtitle: 'HUMAN-LED, AI-AMPLIFIED',
+      description: 'A framework for materializing complex ideas while protecting human agency in high-friction environments. Empathy is not soft—it is the strategic compass that guides every interface decision. Understanding user anxiety, regulatory pressure, and trust dynamics transforms design from decoration into differentiation. We build for empowerment, always.',
       kpi: '29%',
       kpiLabel: 'WASTE REDUCTION',
       metrics: [
@@ -80,15 +80,15 @@ const HorizontalScrollPillars = () => {
     },
     {
       icon: BookOpen,
-      title: 'Evolutionary Learning',
-      subtitle: 'RESEARCH MATURITY & SYSTEMATIC GROWTH',
-      description: 'Design maturity is not achieved through heroic efforts—it is built through systematic practice. Evidence-based frameworks, structured feedback loops, and continuous iteration transform intuition into methodology. Knowledge compounds when properly captured and shared.',
+      title: 'Operational Leadership',
+      subtitle: 'SCALING QUALITY THROUGH SYSTEMATIC PRACTICE',
+      description: 'Leading a 16-person design team with a $1.05M budget requires more than vision—it demands operational rigor. The 750% increase in research maturity is not luck; it is the result of systematic frameworks, structured feedback loops, and relentless iteration. Design excellence scales when leadership transforms intuition into repeatable methodology.',
       kpi: '750%',
       kpiLabel: 'MATURITY GROWTH',
       metrics: [
-        { label: 'Studies', value: '24/Q' },
-        { label: 'Impact', value: '67%' },
-        { label: 'Accuracy', value: '94%' }
+        { label: 'Team Size', value: '16' },
+        { label: 'Budget', value: '$1.05M' },
+        { label: 'Studies/Q', value: '24' }
       ],
       borderClass: 'border-t-2 border-t-blue-500',
       accentColor: 'blue-500'
