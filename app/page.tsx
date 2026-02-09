@@ -5,6 +5,7 @@ import ChatWidget from './components/ChatWidget';
 import HorizontalScrollPillars from './components/HorizontalScrollPillars';
 import MouseCursorLights from './components/MouseCursorLights';
 import AboutSection from './components/AboutSection';
+import Footer from './components/Footer';
 
 export default function PortfolioApp() {
   const [mounted, setMounted] = React.useState(false);
@@ -146,6 +147,9 @@ export default function PortfolioApp() {
 
       {/* Horizontal Scroll Strategic Pillars */}
       <HorizontalScrollPillars />
+
+      {/* Footer */}
+      <Footer />
 
       {/* Chat Widget */}
       <ChatWidget />

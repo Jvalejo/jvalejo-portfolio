@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { X, Send, Plus } from 'lucide-react';
+import { X, Send, Plus, Linkedin } from 'lucide-react';
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -171,6 +171,25 @@ export default function ChatWidget() {
                     <div className="w-1.5 h-1.5 bg-yellow-500 animate-bounce" style={{ animationDelay: '300ms' }} />
                   </div>
                 </div>
+              </div>
+            )}
+
+            {/* LinkedIn Redirect Message */}
+            {messages.length > 0 && (
+              <div className="mt-6 pt-4 border-t border-zinc-800">
+                <a 
+                  href="https://www.linkedin.com/in/jeisonvalejo/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-3 border border-zinc-800 bg-black hover:border-yellow-500/50 transition-all group"
+                >
+                  <Linkedin className="w-5 h-5 text-yellow-500 flex-shrink-0" strokeWidth={1.5} />
+                  <div>
+                    <p className="text-zinc-300 text-xs leading-relaxed">
+                      Message me directly on LinkedIn to discuss the 2026 Strategy.
+                    </p>
+                  </div>
+                </a>
               </div>
             )}
 
