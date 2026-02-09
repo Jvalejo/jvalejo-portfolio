@@ -14,11 +14,10 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Two Column Layout */}
+      {/* Two Column Layout - Stacks on Mobile */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-        {/* Left: Image Placeholder */}
-        <div className="relative min-h-[500px] md:min-h-[700px] border-r-0 md:border-r border-zinc-800 bg-zinc-950">
-          {/* Placeholder Image with High Contrast Filter */}
+        {/* Image Placeholder - Top on Mobile */}
+        <div className="relative min-h-[400px] md:min-h-[700px] border-b md:border-b-0 md:border-r border-zinc-800 bg-zinc-950 order-1 md:order-1">
           <div 
             className="absolute inset-0 bg-zinc-800"
             style={{
@@ -27,19 +26,16 @@ const AboutSection = () => {
               backgroundSize: '60px 60px'
             }}
           >
-            {/* Image Overlay Frame */}
-            <div className="absolute inset-0 border-2 border-zinc-800 m-8" />
+            <div className="absolute inset-0 border-2 border-zinc-800 m-6 md:m-8" />
             
-            {/* Corner Markers */}
-            <div className="absolute top-8 left-8 w-12 h-12 border-l-2 border-t-2 border-white opacity-20" />
-            <div className="absolute top-8 right-8 w-12 h-12 border-r-2 border-t-2 border-white opacity-20" />
-            <div className="absolute bottom-8 left-8 w-12 h-12 border-l-2 border-b-2 border-white opacity-20" />
-            <div className="absolute bottom-8 right-8 w-12 h-12 border-r-2 border-b-2 border-white opacity-20" />
+            <div className="absolute top-6 md:top-8 left-6 md:left-8 w-10 md:w-12 h-10 md:h-12 border-l-2 border-t-2 border-white opacity-20" />
+            <div className="absolute top-6 md:top-8 right-6 md:right-8 w-10 md:w-12 h-10 md:h-12 border-r-2 border-t-2 border-white opacity-20" />
+            <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 w-10 md:w-12 h-10 md:h-12 border-l-2 border-b-2 border-white opacity-20" />
+            <div className="absolute bottom-6 md:bottom-8 right-6 md:right-8 w-10 md:w-12 h-10 md:h-12 border-r-2 border-b-2 border-white opacity-20" />
             
-            {/* Placeholder Text */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <div className="border border-zinc-700 inline-block px-6 py-3 bg-black/50 backdrop-blur-sm">
+                <div className="border border-zinc-700 inline-block px-4 md:px-6 py-2 md:py-3 bg-black/50 backdrop-blur-sm">
                   <span className="text-zinc-600 font-mono text-xs uppercase tracking-widest">
                     Portrait / High Contrast
                   </span>
@@ -49,10 +45,9 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Right: Bio Content */}
-        <div className="relative p-8 md:p-16 xl:p-20 bg-black flex flex-col justify-center">
-          {/* Label */}
-          <div className="mb-12">
+        {/* Bio Content - Below Image on Mobile */}
+        <div className="relative p-6 md:p-12 xl:p-20 bg-black flex flex-col justify-center order-2 md:order-2">
+          <div className="mb-8 md:mb-12">
             <div className="border-l-2 border-l-yellow-500 pl-4">
               <span className="text-zinc-600 font-mono text-[10px] uppercase tracking-widest">
                 About / 2026
@@ -60,66 +55,62 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Large Serif Quote */}
-          <blockquote className="text-4xl md:text-5xl xl:text-6xl font-serif font-light leading-tight mb-12 tracking-tight">
-            "Designing for the next generation of trust."
+          <blockquote className="text-3xl md:text-4xl xl:text-6xl font-serif font-light leading-tight mb-8 md:mb-12 tracking-tight">
+            "Designing for human agency in an AI-amplified world."
           </blockquote>
 
-          {/* Bio Content */}
-          <div className="space-y-6 mb-12">
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I architect systematic transformation at the intersection of human intuition and machine capability. The 2026 Strategy represents a fundamental shift: moving from assistive AI tools to agentic systems that autonomously execute strategic initiatives.
+          <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I lead at the intersection where AI serves as the multiplier and human empathy remains the compass. The 2026 Strategy isn't about replacing human judgment—it's about amplifying it while preserving what makes us irreplaceable: creativity, strategic thinking, and deep user empathy.
             </p>
 
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              My approach is data-driven and ruthlessly efficient—<span className="text-emerald-400 font-mono">+41% AI-augmented efficiency</span>, <span className="text-blue-400 font-mono">29% operational waste reduction</span>, and <span className="text-violet-400 font-mono">750% research maturity growth</span>. These aren't just metrics; they're proof that design, when treated as a strategic function, drives measurable business outcomes.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              <span className="text-yellow-500 font-mono">AI is the multiplier.</span> <span className="text-red-600 font-mono">Human empathy is the compass.</span> Together, they drive <span className="text-white font-medium">designing for human agency</span>—empowering users to make informed decisions in complex, high-stakes environments. This isn't soft design thinking; it's strategic advantage measured in <span className="text-emerald-400 font-mono">+41% efficiency</span>, <span className="text-blue-400 font-mono">29% waste reduction</span>, and <span className="text-violet-400 font-mono">750% research maturity</span>.
             </p>
 
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              But beyond the spreadsheets and systems, I'm <span className="text-white font-medium">Nuno's father</span>—a role that grounds every decision in long-term thinking and ethical responsibility. The products we build today shape the trust architectures of tomorrow.
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Beyond spreadsheets and systems, I'm <span className="text-white font-medium">Nuno's father</span>—a role that anchors every strategic decision in long-term thinking and ethical responsibility. The trust architectures we build today shape the world he inherits tomorrow.
             </p>
           </div>
 
-          {/* Credentials Grid */}
-          <div className="grid grid-cols-2 gap-0 border border-zinc-800">
-            <div className="border-r border-b border-zinc-800 p-6 bg-zinc-950">
+          <div className="grid grid-cols-2 gap-0 border border-zinc-800 mb-8 md:mb-0">
+            <div className="border-r border-b border-zinc-800 p-4 md:p-6 bg-zinc-950">
               <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
                 Role
               </div>
-              <div className="text-white font-mono text-sm">
+              <div className="text-white font-mono text-xs md:text-sm">
                 VP Product Design
               </div>
             </div>
-            <div className="border-b border-zinc-800 p-6 bg-zinc-950">
+            <div className="border-b border-zinc-800 p-4 md:p-6 bg-zinc-950">
               <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
                 Company
               </div>
-              <div className="text-white font-mono text-sm">
+              <div className="text-white font-mono text-xs md:text-sm">
                 Uphold
               </div>
             </div>
-            <div className="border-r border-zinc-800 p-6 bg-zinc-950">
+            <div className="border-r border-zinc-800 p-4 md:p-6 bg-zinc-950">
               <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
                 Location
               </div>
-              <div className="text-white font-mono text-sm">
-                Porto, PT
+              <div className="text-white font-mono text-xs md:text-sm">
+                Portugal
               </div>
             </div>
-            <div className="p-6 bg-zinc-950">
+            <div className="p-4 md:p-6 bg-zinc-950">
               <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
                 Focus
               </div>
-              <div className="text-white font-mono text-sm">
-                AI / Strategy
+              <div className="text-white font-mono text-xs md:text-sm">
+                Strategy / AI / Empathic Design
               </div>
             </div>
           </div>
 
-          {/* Signature Element */}
-          <div className="mt-12 pt-8 border-t border-zinc-800">
+          <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-zinc-800">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-px bg-zinc-800" />
+              <div className="w-12 md:w-16 h-px bg-zinc-800" />
               <span className="text-zinc-700 font-mono text-xs tracking-widest">
                 JEISON VALEJO / 2026
               </span>

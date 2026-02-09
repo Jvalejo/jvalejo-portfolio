@@ -27,14 +27,12 @@ export default function PortfolioApp() {
             transform: mounted ? 'translateY(0)' : 'translateY(20px)'
           }}
         >
-          {/* Name */}
           <div className="border-2 border-zinc-800 inline-block p-8 md:p-12 bg-zinc-950">
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-black tracking-tighter leading-none uppercase">
               Jeison<br/>Valejo
             </h1>
           </div>
 
-          {/* Subtitle */}
           <div className="border-2 border-zinc-800 inline-block px-6 md:px-8 py-3 md:py-4 bg-black">
             <p className="text-xs md:text-sm text-zinc-400 font-mono uppercase tracking-widest">
               VP of Product Design | Nuno's Father
@@ -43,10 +41,9 @@ export default function PortfolioApp() {
         </div>
       </section>
 
-      {/* Bento KPI Grid - Bauhaus Style */}
+      {/* Bento KPI Grid */}
       <section className="px-6 md:px-8 py-12 md:py-20 max-w-7xl mx-auto border-b-2 border-zinc-800">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-zinc-800">
-          {/* KPI 1 */}
           <div 
             className="border-r-0 md:border-r-2 border-b-2 md:border-b-0 border-zinc-800 p-8 md:p-12 lg:p-16 bg-zinc-950 hover:bg-black transition-colors group"
             style={{
@@ -64,7 +61,6 @@ export default function PortfolioApp() {
             </div>
           </div>
           
-          {/* KPI 2 */}
           <div 
             className="border-r-0 md:border-r-2 border-b-2 md:border-b-0 border-zinc-800 p-8 md:p-12 lg:p-16 bg-zinc-950 hover:bg-black transition-colors group"
             style={{
@@ -82,7 +78,6 @@ export default function PortfolioApp() {
             </div>
           </div>
           
-          {/* KPI 3 */}
           <div 
             className="p-8 md:p-12 lg:p-16 bg-zinc-950 hover:bg-black transition-colors group"
             style={{
@@ -102,7 +97,7 @@ export default function PortfolioApp() {
         </div>
       </section>
 
-      {/* Editorial Manifesto Section - Industrial Grid */}
+      {/* Editorial Manifesto Section */}
       <section className="px-6 md:px-8 py-20 md:py-32 max-w-7xl mx-auto border-b-2 border-zinc-800">
         <div 
           className="transition-all duration-700 ease-out"
@@ -112,19 +107,17 @@ export default function PortfolioApp() {
             transitionDelay: '400ms'
           }}
         >
-          {/* Title in Bauhaus Box */}
           <div className="border-2 border-zinc-800 inline-block p-6 md:p-8 mb-12 md:mb-16 bg-zinc-950">
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif font-black tracking-tighter uppercase">
               The Manifesto
             </h2>
           </div>
           
-          {/* Content Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-2 border-zinc-800">
             <div className="p-8 md:p-10 border-r-0 md:border-r-2 border-b-2 md:border-b-0 border-zinc-800 bg-black">
               <div className="border-l-4 border-l-yellow-400 pl-6">
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-sans">
-                  In an era where artificial intelligence reshapes every corner of product development, design leadership must evolve beyond aesthetic decisions into strategic orchestration. The modern VP of Product Design is not merely a guardian of pixels and patterns, but an architect of systematic transformation.
+                  <span className="text-yellow-500 font-mono">AI is the multiplier.</span> It accelerates research, automates repetition, and scales creative output. But artificial intelligence remains exactly that—artificial. It amplifies human capability without replacing human judgment. The machine processes; the strategist decides.
                 </p>
               </div>
             </div>
@@ -132,7 +125,7 @@ export default function PortfolioApp() {
             <div className="p-8 md:p-10 border-r-0 md:border-r-2 border-b-2 md:border-b-0 border-zinc-800 bg-black">
               <div className="border-l-4 border-l-red-500 pl-6">
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-sans">
-                  We stand at the intersection of human intuition and machine capability. Our mandate is clear: leverage AI to amplify efficiency while preserving the irreplaceable human elements of creativity, empathy, and strategic thinking. This requires building lean, agile teams that operate with surgical precision.
+                  <span className="text-red-600 font-mono">Human empathy is the compass.</span> In complex, high-stakes environments, understanding user anxiety and building trust isn't optional—it's strategic. Every interface either empowers human agency or diminishes it. We design for agency, always.
                 </p>
               </div>
             </div>
@@ -140,7 +133,7 @@ export default function PortfolioApp() {
             <div className="p-8 md:p-10 bg-black">
               <div className="border-l-4 border-l-blue-500 pl-6">
                 <p className="text-zinc-300 text-sm md:text-base leading-relaxed font-sans">
-                  Excellence in design is measured not by output volume but by impact depth. By systematically addressing technical debt, optimizing organizational structure, and implementing rigorous quality frameworks, we transform design from a cost center into a strategic differentiator that drives measurable business outcomes.
+                  Excellence emerges from the synthesis: AI-amplified efficiency paired with empathic, human-centered strategy. This balance transforms design from cost center to competitive advantage, measured in reduced waste, accelerated maturity, and sustainable trust.
                 </p>
               </div>
             </div>
