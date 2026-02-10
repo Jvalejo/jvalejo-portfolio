@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const AboutSection = () => {
   return (
@@ -16,33 +17,24 @@ const AboutSection = () => {
 
       {/* Two Column Layout - Stacks on Mobile */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-        {/* Image Placeholder - Top on Mobile */}
-        <div className="relative min-h-[400px] md:min-h-[700px] border-b md:border-b-0 md:border-r border-zinc-800 bg-zinc-950 order-1 md:order-1">
-          <div 
-            className="absolute inset-0 bg-zinc-800"
-            style={{
-              filter: 'grayscale(1) contrast(1.2)',
-              backgroundImage: 'linear-gradient(135deg, #18181b 25%, #27272a 25%, #27272a 50%, #18181b 50%, #18181b 75%, #27272a 75%, #27272a)',
-              backgroundSize: '60px 60px'
-            }}
-          >
-            <div className="absolute inset-0 border-2 border-zinc-800 m-6 md:m-8" />
-            
-            <div className="absolute top-6 md:top-8 left-6 md:left-8 w-10 md:w-12 h-10 md:h-12 border-l-2 border-t-2 border-white opacity-20" />
-            <div className="absolute top-6 md:top-8 right-6 md:right-8 w-10 md:w-12 h-10 md:h-12 border-r-2 border-t-2 border-white opacity-20" />
-            <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 w-10 md:w-12 h-10 md:h-12 border-l-2 border-b-2 border-white opacity-20" />
-            <div className="absolute bottom-6 md:bottom-8 right-6 md:right-8 w-10 md:w-12 h-10 md:h-12 border-r-2 border-b-2 border-white opacity-20" />
-            
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="border border-zinc-700 inline-block px-4 md:px-6 py-2 md:py-3 bg-black/50 backdrop-blur-sm">
-                  <span className="text-zinc-600 font-mono text-xs uppercase tracking-widest">
-                    Portrait / High Contrast
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Image Container - Top on Mobile */}
+        <div className="relative min-h-[400px] md:min-h-[700px] border-b md:border-b-0 md:border-r border-zinc-800 bg-zinc-950 order-1 md:order-1 overflow-hidden group">
+          <Image
+            src="/DSC04203.jpg"
+            alt="Jeison Valejo - VP of Product Design"
+            fill
+            className="object-cover transition-all duration-700 grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100"
+            priority
+          />
+          
+          {/* Corner Markers */}
+          <div className="absolute top-6 md:top-8 left-6 md:left-8 w-10 md:w-12 h-10 md:h-12 border-l-2 border-t-2 border-white opacity-20 z-10" />
+          <div className="absolute top-6 md:top-8 right-6 md:right-8 w-10 md:w-12 h-10 md:h-12 border-r-2 border-t-2 border-white opacity-20 z-10" />
+          <div className="absolute bottom-6 md:bottom-8 left-6 md:left-8 w-10 md:w-12 h-10 md:h-12 border-l-2 border-b-2 border-white opacity-20 z-10" />
+          <div className="absolute bottom-6 md:bottom-8 right-6 md:right-8 w-10 md:w-12 h-10 md:h-12 border-r-2 border-b-2 border-white opacity-20 z-10" />
+          
+          {/* Frame Border */}
+          <div className="absolute inset-0 border-2 border-zinc-800 m-6 md:m-8 pointer-events-none z-10" />
         </div>
 
         {/* Bio Content - Below Image on Mobile */}
