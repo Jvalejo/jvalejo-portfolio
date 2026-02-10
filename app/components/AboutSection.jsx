@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 
 const AboutSection = () => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   return (
     <section className="relative bg-black border-t-2 border-zinc-800">
       {/* Section Label */}
@@ -15,27 +17,29 @@ const AboutSection = () => {
         </div>
       </div>
 
-      {/* Two Column Layout - Stacks on Mobile */}
+      {/* Two Column Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-        {/* Image Container - Top on Mobile */}
-        <div className="relative min-h-[400px] md:min-h-[700px] border-b md:border-b-0 md:border-r border-zinc-800 bg-black order-1 md:order-1 overflow-hidden group">
-          <Image
-            src="/DSC04203.jpg"
-            alt="Jeison Valejo - VP of Product Design"
-            fill
-            className="object-cover"
-            style={{
-              filter: 'grayscale(100%) contrast(1.2) brightness(0.9)',
-              transition: 'filter 0.5s ease-in-out'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.filter = 'grayscale(0%) contrast(1) brightness(1)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.filter = 'grayscale(100%) contrast(1.2) brightness(0.9)';
-            }}
-            priority
-          />
+        {/* LEFT: Portrait Image - First on Desktop */}
+        <div 
+          className="relative min-h-[400px] md:min-h-[700px] border-b md:border-b-0 md:border-r border-zinc-800 bg-black overflow-hidden order-1"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="absolute inset-0">
+            <Image
+              src="/DSC04203.jpg"
+              alt="Jeison Valejo - VP of Product Design"
+              fill
+              className="object-cover"
+              style={{
+                filter: isHovered 
+                  ? 'grayscale(0%) contrast(1)' 
+                  : 'grayscale(100%) contrast(1.2)',
+                transition: 'filter 0.4s ease'
+              }}
+              priority
+            />
+          </div>
           
           {/* Sharp Grid Lines - Corner Markers */}
           <div 
@@ -62,81 +66,79 @@ const AboutSection = () => {
           />
         </div>
 
-        {/* Bio Content - Below Image on Mobile */}
-        <div className="relative p-6 md:p-12 xl:p-20" style={{ backgroundColor: '#000000' }}>
-          <div className="flex flex-col justify-center h-full">
-            <div className="mb-8 md:mb-12">
-              <div className="border-l-2 border-l-yellow-500 pl-4">
-                <span className="text-zinc-600 font-mono text-[10px] uppercase tracking-widest">
-                  About / 2026
-                </span>
+        {/* RIGHT: Bio Content */}
+        <div className="relative p-6 md:p-12 xl:p-20 bg-black flex flex-col justify-center order-2">
+          <div className="mb-8 md:mb-12">
+            <div className="border-l-2 border-l-yellow-500 pl-4">
+              <span className="text-zinc-600 font-mono text-[10px] uppercase tracking-widest">
+                About / 2026
+              </span>
+            </div>
+          </div>
+
+          <blockquote className="text-3xl md:text-4xl xl:text-6xl font-serif font-extrabold leading-tight mb-3 tracking-tight" style={{ fontWeight: 800 }}>
+            "Designing for the next generation of trust."
+          </blockquote>
+          
+          <div className="text-2xl md:text-3xl xl:text-4xl font-serif font-light text-zinc-600 mb-8 md:mb-12 tracking-tight">
+            For Nuno.
+          </div>
+
+          <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I lead design teams managing multi-million dollar R&D budgets. My work sits at the intersection where AI serves as the multiplier and human empathy remains the compass. The 2026 Strategy is not about replacing human judgment—it is about amplifying it systematically.
+            </p>
+
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              <span className="text-yellow-500 font-mono">AI handles the scale.</span> I handle the strategy, the ethics, and the leadership. Together, we design for <span className="text-white font-medium">human agency</span>—empowering users to make informed decisions in complex, high-stakes environments. The results speak: <span className="text-emerald-400 font-mono">+41% efficiency</span>, <span className="text-blue-400 font-mono">29% waste reduction</span>, and <span className="text-violet-400 font-mono">750% research maturity growth</span>.
+            </p>
+
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
+              Beyond the metrics and frameworks, I am <span className="text-white font-medium">Nuno's father</span>. That role anchors every decision in long-term thinking and ethical responsibility. The trust architectures we build today define the world he inherits tomorrow.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-0 border border-zinc-800 mb-8 md:mb-0">
+            <div className="border-r border-b border-zinc-800 p-4 md:p-6 bg-zinc-950">
+              <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
+                Role
+              </div>
+              <div className="text-white text-xs md:text-sm">
+                VP Product Design
               </div>
             </div>
-
-            <blockquote className="text-3xl md:text-4xl xl:text-6xl font-serif font-extrabold leading-tight mb-3 tracking-tight" style={{ fontWeight: 800 }}>
-              "Designing for the next generation of trust."
-            </blockquote>
-            
-            <div className="text-2xl md:text-3xl xl:text-4xl font-serif font-light text-zinc-600 mb-8 md:mb-12 tracking-tight">
-              For Nuno.
-            </div>
-
-            <div className="space-y-4 md:space-y-6 mb-8 md:mb-12">
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                As VP of Product Design at <span className="text-white font-medium">Uphold</span>, I lead design teams managing multi-million dollar R&D budgets. My work sits at the intersection where AI serves as the multiplier and human empathy remains the compass. The 2026 Strategy is not about replacing human judgment—it is about amplifying it systematically.
-              </p>
-
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                <span className="text-yellow-500 font-mono">AI handles the scale.</span> I handle the strategy, the ethics, and the leadership. Together, we design for <span className="text-white font-medium">human agency</span>—empowering users to make informed decisions in complex, high-stakes environments. The results speak: <span className="text-emerald-400 font-mono">+41% efficiency</span>, <span className="text-blue-400 font-mono">29% waste reduction</span>, and <span className="text-violet-400 font-mono">750% research maturity growth</span>.
-              </p>
-
-              <p className="text-zinc-400 text-base md:text-lg leading-relaxed">
-                Beyond the metrics and frameworks, I am <span className="text-white font-medium">Nuno's father</span>. That role anchors every decision in long-term thinking and ethical responsibility. The trust architectures we build today define the world he inherits tomorrow.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-0 border border-zinc-800 mb-8 md:mb-0">
-              <div className="border-r border-b border-zinc-800 p-4 md:p-6 bg-zinc-950">
-                <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
-                  Role
-                </div>
-                <div className="text-white text-xs md:text-sm">
-                  VP Product Design
-                </div>
+            <div className="border-b border-zinc-800 p-4 md:p-6 bg-zinc-950">
+              <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
+                Company
               </div>
-              <div className="border-b border-zinc-800 p-4 md:p-6 bg-zinc-950">
-                <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
-                  Company
-                </div>
-                <div className="text-white text-xs md:text-sm">
-                  Uphold
-                </div>
-              </div>
-              <div className="border-r border-zinc-800 p-4 md:p-6 bg-zinc-950">
-                <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
-                  Location
-                </div>
-                <div className="text-white font-mono text-xs md:text-sm">
-                  Portugal
-                </div>
-              </div>
-              <div className="p-4 md:p-6 bg-zinc-950">
-                <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
-                  Focus
-                </div>
-                <div className="text-white font-mono text-xs md:text-sm">
-                  Strategy / AI / Empathic Design
-                </div>
+              <div className="text-white text-xs md:text-sm">
+                Uphold
               </div>
             </div>
-
-            <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-zinc-800">
-              <div className="flex items-center gap-4">
-                <div className="w-12 md:w-16 h-px bg-zinc-800" />
-                <span className="text-zinc-700 font-mono text-xs tracking-widest">
-                  JEISON VALEJO / 2026
-                </span>
+            <div className="border-r border-zinc-800 p-4 md:p-6 bg-zinc-950">
+              <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
+                Location
               </div>
+              <div className="text-white font-mono text-xs md:text-sm">
+                Portugal
+              </div>
+            </div>
+            <div className="p-4 md:p-6 bg-zinc-950">
+              <div className="text-zinc-600 font-mono text-[9px] uppercase tracking-widest mb-2">
+                Focus
+              </div>
+              <div className="text-white font-mono text-xs md:text-sm">
+                Strategy / AI / Empathic Design
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-zinc-800">
+            <div className="flex items-center gap-4">
+              <div className="w-12 md:w-16 h-px bg-zinc-800" />
+              <span className="text-zinc-700 font-mono text-xs tracking-widest">
+                JEISON VALEJO / 2026
+              </span>
             </div>
           </div>
         </div>
