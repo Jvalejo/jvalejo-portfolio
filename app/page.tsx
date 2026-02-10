@@ -29,7 +29,7 @@ export default function PortfolioApp() {
           }}
         >
           <div className="border-2 border-zinc-800 inline-block p-8 md:p-12 bg-zinc-950">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif font-black tracking-tighter leading-none uppercase">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-serif tracking-tighter leading-none uppercase" style={{ fontWeight: 800 }}>
               Jeison<br/>Valejo
             </h1>
           </div>
